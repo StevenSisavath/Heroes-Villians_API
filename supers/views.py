@@ -9,10 +9,10 @@ from .serializers import SuperSerializer
 def supers_list(request):
 
     if request.method == 'GET':
-        super_type = request.query_params.get("supertype")
+        supertype = request.query_params.get("type")
         supers = Super.objects.all()
-        if super_type:
-            queryset = queryset.filter(super_type=super_type)
+        if supertype:
+            queryset = queryset.filter(supertype=supertype)
         serializer = SuperSerializer(supers, many=True)
         return Response(serializer.data)
 
