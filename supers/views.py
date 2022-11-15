@@ -6,7 +6,7 @@ from .models import Super
 from .serializers import SuperSerializer
 
 @api_view(['GET', 'POST'])
-def cars_list(request):
+def supers_list(request):
 
     if request.method == 'GET':
         super_type = request.query_params.get("supertype")
